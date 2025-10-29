@@ -1,8 +1,11 @@
-# Usar uma imagem base oficial do Nginx
+# Dockerfile para servir página estática com nginx
 FROM nginx:alpine
 
-# Copiar os arquivos HTML e JavaScript para o diretório do servidor Nginx
-COPY index.html /usr/share/nginx/html/
-COPY js/scripts.js /usr/share/nginx/html/js/
-# Expor a porta 80 para acesso externo
+# Remove o conteúdo padrão do nginx
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copia seus arquivos para o diretório servido pelo nginx
+COPY . /usr/share/nginx/html
+
+# Expõe a porta 80
 EXPOSE 80
