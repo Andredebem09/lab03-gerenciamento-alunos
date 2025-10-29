@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTech Academy</title>
+</head>
+
+<body>
+    <h2>DevTech Academy</h2>
+    <hr>
+
+    <form action="" id="formulario">
+        <label for="nome">Nome:</label> <br>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
+
+        <br><br>
+        <label for="idade">Idade:</label> <br>
+        <input type="number" name="idade" id="idade" placeholder="Digite sua idade" required>
+
+        <br><br>
+        <label for="curso">Curso:</label> <br>
+        <select name="curso" id="curso">
+            <option value="" selected disabled>Selecione seu curso</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+        </select>
+
+        <br><br>
+        <label for="notaFinal">Nota Final:</label> <br>
+        <input type="number" name="notaFinal" id="notaFinal" placeholder="Digite sua nota final" required>
+
+        <br><br>
+        <button type="submit" id="btn-salvar" name="salvar">Salvar</button>
+        <button type="button" id="btn-excluir" name="excluir">Excluir</button>
+
+        <br><br>
+        <table border="1" cellpadding="10" cellspacing="0" id="tabela-alunos" style="display: none;">
+            <thead style="background-color: #a9a9a7;">
+                <tr">
+                    <th width="300">Nome</th>
+                    <th width="85">Idade</th>
+                    <th width="300">Curso</th>
+                    <th width="85">Nota Final</th>
+                    <th width="135">Edição/Exclusão</th>
+                    </tr>
+            </thead>
+
+            <tbody id="corpo-tabela-alunos"></tbody>
+        </table>
+
+        <br><br>
+        <section id="relatorios" style="display: none;">
+            <hr>
+            <h2>Relatórios</h2>
+            <button type="button" id="btn-listar-alunos-aprovados">Listar alunos aprovados</button>
+            <button type="button" id="btn-media-notas">Média das notas</button>
+            <button type="button" id="btn-media-idades">Média das idades</button>
+            <button type="button" id="btn-nomes-em-ordem">Nomes em ordem alfabética</button>
+            <button type="button" id="btn-quantidade-por-curso">Quantidade de alunos por curso</button>
+            
+            <section id="alunos-aprovados" style="display: none;">
+                <br><br>
+                <h2>Alunos Aprovados</h2>
+                <table border="1" cellpadding="10" cellspacing="0">
+                    <thead style="background-color: #a9a9a7;">
+                        <tr">
+                        <th width="300">Nome</th>
+                        <th width="85">Nota Final</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="tabelaAlunosAprovados"></tbody>
+                </table>
+            </section>
+            
+            <section id="media" style="display: none;">
+                <br><br>
+                <h2 id="titulo-media"></h2>
+                <span id="descricao-media"></span>
+            </section>
+            
+            <section id="nomes-em-ordem" style="display: none;">
+                <br><br>
+                <h2>Nomes em Ordem Alfabética</h2>
+                <ul id="listaNomes"></ul>
+            </section>
+            
+            <section id="quantidade-alunos-por-curso" style="display: none;">
+                <br><br>
+                <h2>Quantidade de Alunos por Curso</h2>
+                <ul id="listaQuantidadePorCurso"></ul>
+            </section>
+        </section>
+        
+    </form>
+    
+    <script src="js/script.js"></script>
+</body>
+
+</html>
